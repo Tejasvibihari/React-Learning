@@ -5,6 +5,10 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx'
 
 function App() {
+  function clickHandler() {
+    console.log("Helo world -- selected");
+  }
+
   return (
     <div>
       <Header />
@@ -21,13 +25,13 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
-        <section id='examples'> 
+        <section id='examples'>
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={clickHandler}>Components</TabButton>
+            <TabButton onSelect={clickHandler}>JSX</TabButton>
+            <TabButton onSelect={clickHandler}>Props</TabButton>
+            <TabButton onSelect={clickHandler}>State</TabButton>
           </menu>
         </section>
 

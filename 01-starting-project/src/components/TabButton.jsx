@@ -1,8 +1,5 @@
-export default function TubButton(props) {
-    function clickHandler() {
-        console.log("Helo world");
-    }
+export default function TubButton({ children, onSelect }) {
 
-    return <li><button onClick={clickHandler}>{props.children}</button></li>
+    return <li><button onClick={onSelect}>{children}</button></li>
 }
 
