@@ -5,8 +5,10 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx'
 
 function App() {
+  const [staticValue, updateDynamic] = useState("Click any Button");
   function clickHandler(selectedButton) {
     console.log(selectedButton);
+    updateDynamic(selectedButton)
   }
 
   return (
@@ -33,6 +35,7 @@ function App() {
             <TabButton onSelect={() => clickHandler("JSX")}>JSX</TabButton>
             <TabButton onSelect={() => clickHandler("State")}>State</TabButton>
           </menu>
+          {staticValue}
         </section>
 
       </main>
