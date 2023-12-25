@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { CORE_CONCEPTS } from './data';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
-import TabButton from './components/TabButton.jsx'
+import TabButton from './components/TabButton.jsx';
+import { EXAMPLES } from './data.js';
 
 function App() {
-  const [staticValue, updateDynamic] = useState("Click any Button");
+  const [staticValue, updateDynamic] = useState("components");
   function clickHandler(selectedButton) {
     console.log(selectedButton);
     updateDynamic(selectedButton)
   }
-
   return (
     <div>
       <Header />
@@ -30,14 +30,21 @@ function App() {
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => clickHandler("Conmponents")}>Components</TabButton>
-            <TabButton onSelect={() => clickHandler("Props")}>Props</TabButton>
-            <TabButton onSelect={() => clickHandler("JSX")}>JSX</TabButton>
-            <TabButton onSelect={() => clickHandler("State")}>State</TabButton>
+            <TabButton onSelect={() => clickHandler("components")}>Components</TabButton>
+            <TabButton onSelect={() => clickHandler("props")}>Props</TabButton>
+            <TabButton onSelect={() => clickHandler("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => clickHandler("state")}>State</TabButton>
           </menu>
-          {staticValue}
+          <div id='tab-content'>
+            <h3>{EXAMPLES[staticValue].title}</h3>
+            <p>{EXAMPLES[staticValue].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[staticValue].code}
+              </code>
+            </pre>
+          </div>
         </section>
-
       </main>
     </div>
   );
