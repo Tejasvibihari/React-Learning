@@ -1,6 +1,18 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <Header />
+      <Footer />
+    </div>
+  )
+
+
+
 }
 
 export default App;
