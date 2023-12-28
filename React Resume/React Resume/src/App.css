@@ -1,11 +1,17 @@
-.navbar {}
-
 .navbar-brand {
     font-family: 'Gruppo', sans-serif;
     color: white;
     font-weight: bolder;
     font-size: 50px;
 
+}
+
+.header {
+    background-color: #191919;
+}
+
+body {
+    background-color: #191919;
 }
 
 .nav-container {
@@ -15,26 +21,95 @@
 }
 
 .headerBtn {
-    background-color: #000000;
-    border-radius: 28px;
-    border: 1px solid #ffffff;
-    display: inline-block;
-    cursor: pointer;
-    color: #fcfcfc;
-    font-family: Trebuchet MS;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 16px 31px;
+    font-size: 16px;
+    position: relative;
+    padding: 1em 2.5em 1em 2.5em;
+    border: none;
+    background: #fff;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    text-shadow: 0px 1px 11px #444444;
-}
-
-.headerBtn:hover {
-    background-color: #ffffff;
-    color: black;
+    /* To remove the default underline for anchor tags */
+    display: inline-block;
+    /* To make the anchor tag behave like a block element */
+    border-radius: 2em;
+    /* Adding a border radius to make it full-rounded */
+    color: #464646;
 }
 
 .headerBtn:active {
+    transform: scale(0.95);
+}
+
+.headerBtn:hover {
+    background: #f5f5f5;
+    /* Changing the background color on hover */
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.2);
+    /* Adjusting the box-shadow on hover */
+}
+
+.headerBtn .border {
+    /* position: absolute; */
+    border: 0.15em solid #fff;
+    transition: all 0.3s 0.08s linear;
+    top: 50%;
+    left: 50%;
+    width: 9em;
+    height: 3em;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+    /* Adding border radius to the border element */
+}
+
+.headerBtn:hover .border {
+    display: block;
+    width: 9.9em;
+    height: 3.7em;
+}
+
+.card {
+    width: 270px;
+    /* Adjust the width as needed */
+    border-radius: 10px;
+    /* Optional: for rounded corners */
+    overflow: hidden;
+    /* Ensures the image conforms to the card's border-radius */
+    text-align: center;
+    /* For centering the content */
+    /* background-color: #000000; */
+    /* Card background color */
     position: relative;
-    top: 1px;
+    z-index: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    /* Adjust these values based on your preference */
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background: inherit;
+    z-index: -1;
+    border-radius: 15px;
+    /* Slightly larger radius for smoother edges */
+    filter: blur(8px);
+    /* Apply the blur effect */
+    box-shadow: 0 4px 8px 0 rgba(146, 24, 24, 0.2);
+    /* Shadow effect */
+}
+
+.imageContainer {
+    padding: 10px;
+    /* Space inside the card */
+}
+
+.profileImage {
+    width: 100%;
+    /* Make the image responsive to the container size */
+    height: auto;
+    /* Maintain the aspect ratio of the image */
+    border-radius: 5px;
+    /* Optional: for rounded corners on the image */
 }
